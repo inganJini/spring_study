@@ -1,4 +1,2 @@
-com/jini/springboot/web/HelloController.java
- com.jini.springboot.web.HelloController
 com/jini/springboot/Application.java
  com.jini.springboot.Application
