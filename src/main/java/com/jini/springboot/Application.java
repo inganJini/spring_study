@@ -2,7 +2,9 @@ package com.jini.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+@EnableJpaAuditing // JPA Autition 활성화
 @SpringBootApplication // 이 위치부터 설정을 읽기 때문에 프로젝트 최상단에 있어야함
 public class Application {
     public static void main(String[] args) {

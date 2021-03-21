@@ -1,5 +1,6 @@
 package com.jini.springboot.domain.posts;
 
+import com.jini.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 // Entity 클래스는 절대 Setter 메소드 만들지 않음
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // spring 2.0 부터 추가해야 auto_increment 적용
