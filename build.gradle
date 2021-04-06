@@ -40,4 +40,7 @@ dependencies {
     testCompile "org.projectlombok:lombok"
     annotationProcessor('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
+
+    // mustache  src/main/resources/templates 아래 머스테치 파일 위치시 스프링 부트에서 자동으로 로딩.
+    compile('org.springframework.boot:spring-boot-starter-mustache')
 }
