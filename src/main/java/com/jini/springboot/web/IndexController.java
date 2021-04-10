@@ -1,16 +1,22 @@
 package com.jini.springboot.web;
 
+import com.jini.springboot.service.posts.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.ui.Model;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
+    private final PostsService postsService;
+
     // View Resolver가 처리
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("posts", postsService.findAllDesc());
         return "index";
     }
 
