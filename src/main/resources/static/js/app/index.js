@@ -4,6 +4,11 @@ var main = {
         $('#btn-save').on('click', function(){
             _this.save();
         });
+
+        $('#btn-update').on('click', function(){
+            alert('update');
+            _this.update();
+        });
     },
     save : function () {
         var data = {
@@ -23,6 +28,27 @@ var main = {
             window.location.href = '/'; // 글 등록이 성공하면 메인페이지(/)로 이동합니다.
         }).fail(function (error) {
             alert(JSON.stringify(error))
+        });
+    },
+    update : function () {
+        var data = {
+            title: $('#title').val(),
+            content: $('#content').val()
+        }
+
+        var id = $('#id').val();
+
+        $.ajax({
+            type: 'PUT', // rest api crud 에서 update 시 put
+            url: '/api/v1/posts/'+id,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function(){
+            alert('글이 수정되었습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
         });
     }
 };
